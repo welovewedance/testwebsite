@@ -1,0 +1,33 @@
+style. 
+    .mdc-drawer {
+        width: 128px;
+    }
+    .vertical-center {
+        margin: auto;
+        text-align:center;
+    }
+    .mdc-list .mdc-list-item__graphic {
+        display: block;
+        margin: 0;
+        width: auto;
+    }
+    .mdc-drawer .mdc-list-item {
+        height: auto;
+    }
+
+
+each group, group_name in theme.menu
+    each item, item_name in group
+        -
+         var target = item.external ? "_blank" : null
+         var aria_current = is_current(item.url) ? "page" : null
+         var classes = is_current(item.url) ? "mdc-list-item mdc-list-item--activated" : "mdc-list-item"
+        
+        a(href=item.url class=classes aria-current=aria_current target=target)
+            div.vertical-center
+                i.material-icons.mdc-list-item__graphic(aria-hidden="true")
+                    if item.icon
+                        =item.icon
+                    else if item.img
+                        img(src=item.img width="24")
+                span= item_name
