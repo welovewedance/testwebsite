@@ -22,12 +22,22 @@ each group, group_name in theme.menu
          var target = item.external ? "_blank" : null
          var aria_current = is_current(item.url) ? "page" : null
          var classes = is_current(item.url) ? "mdc-list-item mdc-list-item--activated" : "mdc-list-item"
-        
-        a(href=item.url class=classes aria-current=aria_current target=target)
-            div.vertical-center
-                i.material-icons.mdc-list-item__graphic(aria-hidden="true")
-                    if item.icon
-                        =item.icon
-                    else if item.img
-                        img(src=item.img width="24")
-                span= item_name
+            
+        <a class="mdc-tab mdc-tab--stacked" role="tab" aria-selected="false" tabindex="-1">
+            <span class="mdc-tab__content">
+                <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
+                <span class="mdc-tab__text-label">Favorites</span>
+            </span>
+            <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+            </span>
+            <span class="mdc-tab__ripple"></span>
+        </a>
+        //- a(href=item.url class=classes aria-current=aria_current target=target)
+        //-     div.vertical-center
+        //-         i.material-icons.mdc-list-item__graphic(aria-hidden="true")
+        //-             if item.icon
+        //-                 =item.icon
+        //-             else if item.img
+        //-                 img(src=item.img width="24")
+        //-         span= item_name
