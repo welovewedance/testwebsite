@@ -1,0 +1,63 @@
+include others
+
+style.
+    .mdc-top-app-bar {
+        background-color: transparent;
+    }
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .bottom-left {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+    }
+    .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+    .top-right {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+    }
+        .bottom-right {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .container .content {
+        position: absolute; /* Position the background text */
+        bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1; /* Grey text */
+        width: 100%; /* Full width */
+        padding: 20px; /* Some padding */
+    }
+
+header.mdc-top-app-bar
+    div.mdc-top-app-bar__row
+        section.mdc-top-app-bar__section.mdc-top-app-bar__section--align-start
+            button.material-icons.mdc-top-app-bar__navigation-icon arrow_back
+        section.mdc-top-app-bar__section.mdc-top-app-bar__section--align-end(role="toolbar")
+            <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page">share</a>
+
+//- <div class="container">
+//-     <img src="cover.jpg" width ="100%">     
+//-     <div class="bottom-left">Bottom Left</div>
+//-     <div class="top-left">Top Left</div>
+//-     <div class="top-right">Top Right</div>
+//-     <div class="bottom-right">Bottom Right</div>
+//-     <div class="centered mdc-typography--headline1 content">遇見珍愛之舞</div>
+//- </div>       
